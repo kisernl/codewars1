@@ -1,5 +1,43 @@
 <?php
-echo "<h2> Jan 2024 </h2>";
+echo "<h2> Dec 2024 </h2>";
+
+/* from code wars - Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false. */
+
+
+/* from codewars - The first century spans from the year 1 up to and including the year 100, 
+the second century - from the year 101 up to and including the year 200, etc.
+Task - Given a year, return the century it is in.
+
+Examples
+1705 --> 18
+1900 --> 19
+1601 --> 17
+2000 --> 20 */
+
+function centuryFromYear($year): int
+{
+  $century = ceil($year / 100);
+
+    return $century;
+
+  }
+
+
+
+/*from ChatGBT more specific to pulling centuries from dates:
+  then modified to assume intitial input is only year */
+ 
+  function getCenturyFromDate($date) {
+    // Extracting the year from the date
+    $year = date('Y', strtotime($date));
+
+    // Calculating the century -- NK: this is the only portion I needed
+    $century = ceil($year / 100);
+
+    return $century;
+}
+
+
 
 /* from codewars - Character recognition software is widely used to digitise printed texts. 
 Thus the texts can be edited, searched and stored on a computer.
