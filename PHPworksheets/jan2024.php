@@ -1,16 +1,52 @@
 <?php
 echo "<h2> Jan 2024 </h2>";
 
-/* Can you find the needle in the haystack?
+/* Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and 
+the paperwork has 'm' pages. Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+Example:
+n= 5, m=5: 25
+n=-5, m=5:  0 */
+
+function paperwork(int $n, int $m): int
+{
+  if ($n > 0 && $m > 0) {
+    return $n * $m;
+  } else {
+    return 0;
+  }
+}
+
+/* frome codewars - Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests.
+
+For example (Input -> Output):
+2 -> 3 (1 + 2)
+8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8) */
+
+function summation($num) {
+    return array_sum(range(0,$num));
+  }
+
+
+/* from codewars - Write function RemoveExclamationMarks which removes all exclamation marks from a given string. */
+
+function remove_exclamation_marks($string) {
+ 
+	$res = str_replace('!', '', $string);
+
+	return $res;
+	}
+
+
+
+
+
+/* from codewars - Can you find the needle in the haystack?
 
 Write a function findNeedle() that takes an array full of junk but containing one "needle"
-
 After your function finds the needle it should return a message (as a string) that says:
-
 "found the needle at position " plus the index it found the needle, so:
-
 Example(Input --> Output)
-
 ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
 Note: In COBOL, it should return "found the needle at position 6" */
 
