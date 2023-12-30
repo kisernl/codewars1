@@ -2,11 +2,31 @@
 echo "<h2> Dec 2024 </h2>";
 
 /* from code wars - Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false. */
+function boolToWord($bool){
+ if ($bool) {
+    return "Yes";
+    } else {
+    return "No";
+    }
+  }
+
+// this is the best prcatice solution from codewars:
+function boolToWord1(bool $b): string {
+  return $b ? 'Yes' : 'No';
+}
+// from ChatGPT:
+$isTrue = true;
+if ($isTrue) {
+    echo "It's true!";
+} else {
+    echo "It's false!";
+}
+
 
 
 /* from codewars - The first century spans from the year 1 up to and including the year 100, 
 the second century - from the year 101 up to and including the year 200, etc.
-Task - Given a year, return the century it is in.
+Task - Given a year, return the century it is in. 
 
 Examples
 1705 --> 18
@@ -24,7 +44,7 @@ function centuryFromYear($year): int
 
 
 
-/*from ChatGBT more specific to pulling centuries from dates:
+/*from ChatGPT more specific to pulling centuries from dates:
   then modified to assume intitial input is only year */
  
   function getCenturyFromDate($date) {
