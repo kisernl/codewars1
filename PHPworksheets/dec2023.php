@@ -1,6 +1,57 @@
 <?php
 echo "<h2> Dec 2024 </h2>";
 
+
+/* Build a function that returns an array of integers from n to 1 where n>0.
+Example : n=5 --> [5,4,3,2,1] */
+
+function reverseSeq ($n) {
+  $revarray = array();
+  for ($i=$n; $i > 0; $i--) {
+      $revarray[] = $i;
+  }
+  return $revarray;
+}
+
+// best practice code from codewars:
+function reverseSeq1 ($n) {
+  return range($n, 1);
+};
+
+// with a little help from ChatGPT
+
+function descendingArray($n) {
+  $resultArray = array();
+  for ($i = $n; $i >= 1; $i--) {
+      $resultArray[] = $i;
+  }
+  return $resultArray;
+}
+
+
+// ------------------------------
+/* Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+Examples:
+Testing: [0, 0, 0, 1] ==> 1
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 0, 1] ==> 5
+Testing: [1, 0, 0, 1] ==> 9
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 1, 0] ==> 6
+Testing: [1, 1, 1, 1] ==> 15
+Testing: [1, 0, 1, 1] ==> 11 */
+
+function binaryArrayToNumber($arr) {
+  
+  return bindec(implode($arr));
+  }
+// took me a while to figure out how to get rid of the commas to make actual binary form out of $arr!
+
+
+
+// ---------------------------
 /* from code wars - Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false. */
 function boolToWord($bool){
  if ($bool) {
