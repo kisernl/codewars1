@@ -2,6 +2,94 @@
 echo "<h2> Dec 2024 </h2>";
 
 
+/* from codewars - In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". 
+Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. 
+DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+
+Example: (input --> output)
+
+"ATTGC" --> "TAACG"
+"GTAT" --> "CATA" */
+
+function DNA_strand($dna) {
+$replace = array(
+  "T" => "A",
+  "A" => "T",
+  "C" => "G",
+  "G" => "C");
+$modifiedstring = strtr($dna, $replace);
+return $modifiedstring;
+}
+
+
+// Finally landed on this bit of simple code (help from ChatGPT):
+$inputString = "Hello World";
+$translationTable = [
+    "H" => "J",
+    "e" => "i",
+    "o" => "a",
+    "d" => "k"
+];
+
+$modifiedString = strtr($inputString, $translationTable);
+
+// Output the modified string
+echo $modifiedString; // Output: Jilla Warlk
+
+
+
+// sample code from ChatGPT
+/* this didn't get me there:
+$string = "Hello World";
+$modifiedString = str_replace('o', '!', $string);
+
+** neither did this
+$string = "The quick brown fox jumps over the lazy dog";
+$search = array("quick", "brown", "fox", "lazy", "dog");
+$replace = array("slow", "black", "cat", "energetic", "wolf");
+
+$modifiedString = str_replace($search, $replace, $string);
+
+/* clarification of struggle I'm having with this code from php.net
+// Outputs F because A is replaced with B, then B is replaced with C, and so on...
+// Finally E is replaced with F, because of left to right replacements.
+$search  = array('A', 'B', 'C', 'D', 'E');
+$replace = array('B', 'C', 'D', 'E', 'F');
+$subject = 'A';
+echo str_replace($search, $replace, $subject); */
+
+
+
+// ------------------------
+/* from codewars - In this little assignment you are given a string of space separated numbers, 
+and have to return the highest and lowest number.
+
+Examples
+highAndLow("1 2 3 4 5");  // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5"
+Notes
+All numbers are valid Int32, no need to validate them.
+There will always be at least one number in the input string.
+Output string must be two numbers separated by a single space, and highest number is first. */
+
+function highAndLow($numbers)
+{
+  $numberArray = explode(' ', $numbers);
+  return max($numberArray) . " " . min($numberArray);
+}
+// it worked AND it was similar to BEST PRACTICE on codewars!
+
+
+// From ChatGPT:
+$numbers = [10, 5, 8, 20, 15];
+$highestNumber = max($numbers);
+echo "The highest number in the array is: " . $highestNumber;
+
+$spaceSeparatedNumbers = "10 20 30 40 50";
+$numbersArray = explode(' ', $spaceSeparatedNumbers);
+
+//----------------------
 /* Build a function that returns an array of integers from n to 1 where n>0.
 Example : n=5 --> [5,4,3,2,1] */
 
