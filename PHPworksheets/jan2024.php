@@ -3,6 +3,36 @@ echo "<h2> Jan 2024 </h2>";
 
 echo "1/1/24";
 
+/* from codewars - Given a non-empty array of integers, return the result of 
+multiplying the values together in order. Example:
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24 */
+
+function grow($numbers) {
+    $result = 1; 
+    foreach ($numbers as $number) {
+        $result *= $number; 
+      } return $result;
+    }
+    
+
+// --------------------
+/* from codewars - Given an array of integers your solution should find the smallest integer.
+For example:
+Given [34, 15, 88, 2] your solution will return 2
+Given [34, -345, -1, 100] your solution will return -345
+You can assume, for the purpose of this kata, that the supplied array will not be empty. */
+
+function smallestInteger ($arr) {
+   return min($arr);
+}
+// got the match with best practice on codewars!
+
+//from ChatGPT:
+$numbers = array(4, 2, 8, 6, 3);
+$lowest = min($numbers);
+
+
+// ---------------
 /* from codewars - Write a function to convert a name into initials. 
 This kata strictly takes two words with one space in between them.
 The output should be two capital letters with a dot separating them.
